@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 //        set content view to game, so that objects in the Game class can be rendered to the screen
 
