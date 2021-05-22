@@ -12,6 +12,9 @@ public class Player {
     private double radius;
     private Paint paint;
 
+    private double velocityX;
+    private double velocityY;
+
     public Player(Context context, double positionX, double positionY, double radius){
         this.positionX = positionX;
         this.positionY = positionY;
@@ -26,7 +29,12 @@ public class Player {
         canvas.drawCircle((float)positionX,(float)positionY,(float)radius, paint);
     }
 
-    public void update() {
+    public void update(Joystick joystick) {
+        velocityX=joystick.getActuatorX()*joystick.MAX_SPEED;
+        velocityY=joystick.getActuatorY()*joystick.MAX_SPEED;
+
+        positionX += velocityX;
+        positionY += velocityY;
     }
 
     public void setPosition(double x, double y) {
